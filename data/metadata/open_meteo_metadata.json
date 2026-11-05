@@ -1,0 +1,70 @@
+{
+  "dataset_name": "Open-Meteo Weather & Environmental Telemetry",
+  "provider": "Open-Meteo (open-meteo.com)",
+  "license": "Non-commercial free API / Open Data Attribution (CC BY 4.0)",
+  "coordinates": {
+    "latitude": 18.5204,
+    "longitude": 73.8567
+  },
+  "elevation_m": 561.0,
+  "timezone": "Asia/Kolkata",
+  "utc_offset_seconds": 19800,
+  "files": [
+    {
+      "product_type": "7-Day Hourly Forecast & Current Conditions",
+      "filename": "open_meteo_forecast_pune.json",
+      "relative_path": "data/raw/weather/open_meteo_forecast_pune.json",
+      "sha256": "dca3df13e44f75703a566506bad4b0bf4a8664cd75e1c45758eee9256dd6dddf",
+      "size_bytes": 31907,
+      "validation": {
+        "timesteps_count": 168,
+        "start_time": "2026-11-04T00:00",
+        "end_time": "2026-11-10T23:00",
+        "precipitation_max_mm_per_hr": 0.1,
+        "soil_moisture_mean_m3_per_m3": 0.157375,
+        "variables_present": [
+          "time",
+          "temperature_2m",
+          "relative_humidity_2m",
+          "precipitation",
+          "precipitation_probability",
+          "rain",
+          "weather_code",
+          "pressure_msl",
+          "wind_speed_10m",
+          "wind_direction_10m",
+          "soil_temperature_0_to_7cm",
+          "soil_moisture_0_to_7cm",
+          "soil_moisture_7_to_28cm"
+        ]
+      }
+    },
+    {
+      "product_type": "Historical Hourly Monsoon Archive (July 2024 Flood Event)",
+      "filename": "open_meteo_historical_202407_pune.json",
+      "relative_path": "data/raw/weather/open_meteo_historical_202407_pune.json",
+      "sha256": "73c523bb6234525186c49b5e15debb69550e91a2821b771908414c9d90d6ae12",
+      "size_bytes": 43271,
+      "validation": {
+        "timesteps_count": 288,
+        "start_time": "2024-07-20T00:00",
+        "end_time": "2024-07-31T23:00",
+        "precipitation_max_mm_per_hr": 5.3,
+        "soil_moisture_mean_m3_per_m3": 0.5047916666666666,
+        "variables_present": [
+          "time",
+          "temperature_2m",
+          "relative_humidity_2m",
+          "precipitation",
+          "rain",
+          "pressure_msl",
+          "wind_speed_10m",
+          "wind_direction_10m",
+          "soil_moisture_0_to_7cm",
+          "soil_moisture_7_to_28cm"
+        ]
+      }
+    }
+  ],
+  "acquisition_timestamp": "2026-11-04T09:23:13Z"
+}

@@ -1,0 +1,56 @@
+{
+  "dataset_name": "FLOODX_PUNE_DAILY_FLOOD_ML_TRAINING_DATASET_V1",
+  "temporal_range": {
+    "start_date": "2020-01-01",
+    "end_date": "2024-12-31",
+    "total_days": 1827
+  },
+  "partitions": {
+    "train_days": 1096,
+    "train_positive_days": 36,
+    "validation_days": 365,
+    "validation_positive_days": 0,
+    "test_days": 366,
+    "test_positive_days": 3
+  },
+  "feature_columns_count": 28,
+  "feature_columns": [
+    "precip_total_24h",
+    "precip_max_1h",
+    "precip_max_3h",
+    "precip_max_6h",
+    "precip_max_12h",
+    "precip_intensity_mean",
+    "antecedent_precip_3d",
+    "antecedent_precip_7d",
+    "antecedent_precip_14d",
+    "temp_2m_mean",
+    "temp_2m_max",
+    "temp_2m_min",
+    "relative_humidity_mean",
+    "relative_humidity_max",
+    "surface_pressure_mean",
+    "surface_pressure_min",
+    "pressure_drop_24h",
+    "soil_moisture_0_7cm_mean",
+    "soil_moisture_0_7cm_max",
+    "soil_moisture_7_28cm_mean",
+    "soil_moisture_7_28cm_max",
+    "soil_saturation_ratio_0_7cm",
+    "soil_saturation_ratio_7_28cm",
+    "vpd_mean_kpa",
+    "wind_speed_max",
+    "wind_u_mean",
+    "wind_v_mean",
+    "is_monsoon"
+  ],
+  "target_column": "flood_event_occurred",
+  "target_distribution": {
+    "positive_days": 39,
+    "negative_days": 1788,
+    "positive_rate_percent": 2.135
+  },
+  "file_parquet": "C:\\Users\\thaka\\OneDrive\\Desktop\\Hackathon\\FLOODX\\data\\processed\\ml\\daily_flood_training_dataset.parquet",
+  "parquet_sha256": "1b7ceae9d4aad9544e40c0cd2c8c54139e2499f02d4366fc45e4a5f1660ea1bd",
+  "file_csv": "C:\\Users\\thaka\\OneDrive\\Desktop\\Hackathon\\FLOODX\\data\\processed\\ml\\daily_flood_training_dataset.csv"
+}

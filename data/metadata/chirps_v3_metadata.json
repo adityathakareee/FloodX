@@ -1,0 +1,54 @@
+{
+  "dataset_name": "CHIRPS v3 Historical Daily Precipitation & Multi-Year Time Series",
+  "provider": "Climate Hazards Center (CHC), University of California Santa Barbara (UCSB)",
+  "license": "Public Domain / Open Data Attribution",
+  "citation": "Funk, C. et al. Climate Hazards Center InfraRed Precipitation with Station data (CHIRPS) v3.0, UC Santa Barbara.",
+  "spatial_resolution": "0.05 degrees (~5.3 km)",
+  "temporal_resolution": "Daily",
+  "unit": "mm/day",
+  "crs": "EPSG:4326",
+  "study_area": {
+    "name": "Pune / Mula-Mutha River Basin Provisional Catchment",
+    "bounds_wgs84": [
+      73.3,
+      18.25,
+      74.25,
+      18.85
+    ]
+  },
+  "artifacts": {
+    "raw_peak_event": {
+      "filename": "chirps-v3.0.sat.2024.07.25.tif",
+      "relative_path": "data/raw/rainfall/chirps-v3.0.sat.2024.07.25.tif",
+      "observation_date": "2024-07-25",
+      "sha256": "ff849cfea584cf488d300675cf0bdd4de5d0fd6471a09b4948ae63958d0e5b22",
+      "size_bytes": 16664228,
+      "notes": "Global raw daily Cloud-Optimized GeoTIFF for peak monsoon flood day in Pune."
+    },
+    "processed_peak_raster": {
+      "filename": "chirps_v3_pune_basin_cropped.tif",
+      "relative_path": "data/processed/rainfall/chirps_v3_pune_basin_cropped.tif",
+      "observation_date": "2024-07-25",
+      "dimensions": [
+        19,
+        12
+      ],
+      "rainfall_stats_mm_day": {
+        "min": 16.216289520263672,
+        "max": 344.00213623046875,
+        "mean": 142.97071838378906
+      },
+      "sha256": "4cff416d64bf0d5a23ac4caa9ba4e9069ae032ee5ccf954e2c780fcb45041697",
+      "size_bytes": 1389
+    },
+    "multi_year_timeseries_csv": {
+      "filename": "chirps_v3_pune_daily_2020_2024_timeseries.csv",
+      "relative_path": "data/processed/rainfall/chirps_v3_pune_daily_2020_2024_timeseries.csv",
+      "temporal_coverage": "2020 - 2024 (Monsoon peak flood epochs)",
+      "total_observations": 25,
+      "sha256": "5644949e9d6fb1500c9f97438ff6054f2d5bf51e25051939ecbb4739ec0f1a37",
+      "size_bytes": 3251
+    }
+  },
+  "acquisition_timestamp": "2026-11-04T10:02:59Z"
+}

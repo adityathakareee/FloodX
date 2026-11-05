@@ -1,0 +1,301 @@
+{
+  "manifest_version": "1.1.0",
+  "project": "FLOOD-X",
+  "stage": "Stage 1.1: Data Quality & Geographic Coverage Audit",
+  "generated_timestamp": "2026-11-04T10:04:37Z",
+  "pilot_region": {
+    "name": "Pune / Mula-Mutha River Basin",
+    "centroid_wgs84": [
+      18.5204,
+      73.8567
+    ],
+    "provisional_catchment_bounds_wgs84": {
+      "west": 73.3,
+      "south": 18.25,
+      "east": 74.25,
+      "north": 18.85
+    },
+    "boundary_status": "Provisional study boundary covering Western Ghats upper catchments (Khadakwasla, Panshet, Varasgaon, Mulshi) through PMC/PCMC urban core to Bhima confluence."
+  },
+  "summary": {
+    "total_artifacts": 18,
+    "raw_artifacts": 12,
+    "processed_artifacts": 6,
+    "crs_standard": "WGS 84 (EPSG:4326)"
+  },
+  "files": [
+    {
+      "category": "raw_raster",
+      "subdomain": "elevation",
+      "filename": "Copernicus_DSM_COG_30_N18_00_E073_00_DEM.tif",
+      "relative_path": "data/raw/elevation/Copernicus_DSM_COG_30_N18_00_E073_00_DEM.tif",
+      "size_bytes": 5518610,
+      "sha256": "e6aea937acf4f04e542b0ba6ef9ac84a57e27451f0c2f802c70671a935274295",
+      "format": "GeoTIFF (Cloud-Optimized)",
+      "provider": "European Space Agency (ESA) / AWS Open Data",
+      "license": "Copernicus Open Access",
+      "crs": "EPSG:4326",
+      "resolution": "90m (3 arc-seconds)",
+      "surface_type": "Digital Surface Model (DSM)"
+    },
+    {
+      "category": "raw_raster",
+      "subdomain": "elevation",
+      "filename": "Copernicus_DSM_COG_30_N18_00_E074_00_DEM.tif",
+      "relative_path": "data/raw/elevation/Copernicus_DSM_COG_30_N18_00_E074_00_DEM.tif",
+      "size_bytes": 4695910,
+      "sha256": "8ac625df8bc67a76b89a9437611a114b6230bcb1c3b595dcf37e44b34d95ad94",
+      "format": "GeoTIFF (Cloud-Optimized)",
+      "provider": "European Space Agency (ESA) / AWS Open Data",
+      "license": "Copernicus Open Access",
+      "crs": "EPSG:4326",
+      "resolution": "90m (3 arc-seconds)",
+      "surface_type": "Digital Surface Model (DSM)"
+    },
+    {
+      "category": "raw_telemetry",
+      "subdomain": "weather_and_soil",
+      "filename": "open_meteo_forecast_pune.json",
+      "relative_path": "data/raw/weather/open_meteo_forecast_pune.json",
+      "size_bytes": 31907,
+      "sha256": "dca3df13e44f75703a566506bad4b0bf4a8664cd75e1c45758eee9256dd6dddf",
+      "format": "JSON",
+      "provider": "Open-Meteo",
+      "license": "CC BY 4.0 / Open Data",
+      "description": "7-Day Hourly Meteorological Forecast & Dual-Layer Soil Moisture",
+      "spatial_focus": "Pune City (18.5204\u00b0 N, 73.8567\u00b0 E)"
+    },
+    {
+      "category": "raw_telemetry",
+      "subdomain": "weather_and_soil",
+      "filename": "open_meteo_historical_202407_pune.json",
+      "relative_path": "data/raw/weather/open_meteo_historical_202407_pune.json",
+      "size_bytes": 43271,
+      "sha256": "73c523bb6234525186c49b5e15debb69550e91a2821b771908414c9d90d6ae12",
+      "format": "JSON",
+      "provider": "Open-Meteo",
+      "license": "CC BY 4.0 / Open Data",
+      "description": "July 2024 Severe Monsoon Flood Event Telemetry (July 20-31, 2024)",
+      "spatial_focus": "Pune City (18.5204\u00b0 N, 73.8567\u00b0 E)"
+    },
+    {
+      "category": "raw_rainfall",
+      "subdomain": "precipitation",
+      "filename": "chirps-v3.0.sat.2024.07.25.tif",
+      "relative_path": "data/raw/rainfall/chirps-v3.0.sat.2024.07.25.tif",
+      "size_bytes": 16664228,
+      "sha256": "ff849cfea584cf488d300675cf0bdd4de5d0fd6471a09b4948ae63958d0e5b22",
+      "format": "GeoTIFF",
+      "provider": "UCSB CHC",
+      "license": "Public Domain / GODL India",
+      "description": "CHIRPS v3 Daily Satellite Precipitation (Peak Monsoon Flood Day)",
+      "observation_coverage": "2024-07-25"
+    },
+    {
+      "category": "raw_rainfall",
+      "subdomain": "precipitation",
+      "filename": "chirps-v3.0.sat.2026.01.01.tif",
+      "relative_path": "data/raw/rainfall/chirps-v3.0.sat.2026.01.01.tif",
+      "size_bytes": 11240800,
+      "sha256": "f90bab933dea197862fcc439a4b4c120a080c4a0e53bb8605d9541483b2cd850",
+      "format": "GeoTIFF",
+      "provider": "UCSB CHC",
+      "license": "Public Domain / GODL India",
+      "description": "CHIRPS v3 Daily Satellite Precipitation (Dry Season Reference)",
+      "observation_coverage": "2026-01-01"
+    },
+    {
+      "category": "raw_rainfall",
+      "subdomain": "precipitation",
+      "filename": "rainfall_tel_hr_cwprs_mh_sample.csv",
+      "relative_path": "data/raw/rainfall/rainfall_tel_hr_cwprs_mh_sample.csv",
+      "size_bytes": 3183202,
+      "sha256": "1e4ad31f194a71818c57535b0910fb00d16255f4c6d6453433277ed57632e236",
+      "format": "CSV",
+      "provider": "National Water Informatics Centre (NWIC) / CWPRS",
+      "license": "Public Domain / GODL India",
+      "description": "CWPRS Khadakwasla 5-Minute Telemetry Rainfall (24-hr Cumulative)",
+      "observation_coverage": "2024-2025"
+    },
+    {
+      "category": "raw_hydrology",
+      "subdomain": "river_levels",
+      "filename": "rwl_tel_hr_maharashtra_sw_007_sample.csv",
+      "relative_path": "data/raw/river_levels/rwl_tel_hr_maharashtra_sw_007_sample.csv",
+      "size_bytes": 5242880,
+      "sha256": "1a1f7e8f4c883c4cf681e74ce71b418dde7cf3b02a227a78dce078593b609334",
+      "format": "CSV",
+      "provider": "NWIC / Maharashtra Surface Water Department",
+      "license": "Government Open Data License - India (GODL)",
+      "description": "Hourly River Water Level Telemetry (Station: Ankali Bridge, Sangli; Krishna Basin 007)",
+      "geographic_classification": "Regional reference only (Outside pilot basin; 205.3 km south of Pune)"
+    },
+    {
+      "category": "raw_gis",
+      "subdomain": "infrastructure",
+      "filename": "pune_core_deccan.osm",
+      "relative_path": "data/raw/gis/pune_core_deccan.osm",
+      "size_bytes": 12041069,
+      "sha256": "6782ac065d0d86732bbc2f244ea8904e4ec75e594c42b664fc2eca8494ccce1e",
+      "format": "OSM XML",
+      "provider": "OpenStreetMap Foundation & Contributors",
+      "license": "ODbL 1.0"
+    },
+    {
+      "category": "raw_gis",
+      "subdomain": "infrastructure",
+      "filename": "pune_sangam_confluence.osm",
+      "relative_path": "data/raw/gis/pune_sangam_confluence.osm",
+      "size_bytes": 6003382,
+      "sha256": "5161963b58503eb5d897576963e0dd197cfcbf2a9cc4a12955ec04fbadfa774b",
+      "format": "OSM XML",
+      "provider": "OpenStreetMap Foundation & Contributors",
+      "license": "ODbL 1.0"
+    },
+    {
+      "category": "raw_gis",
+      "subdomain": "infrastructure",
+      "filename": "pune_upstream_mutha.osm",
+      "relative_path": "data/raw/gis/pune_upstream_mutha.osm",
+      "size_bytes": 9100601,
+      "sha256": "cca4dc2a7a8a375a61b14235bee3c3242c128ca1dd41504f51d77b628ea67b91",
+      "format": "OSM XML",
+      "provider": "OpenStreetMap Foundation & Contributors",
+      "license": "ODbL 1.0"
+    },
+    {
+      "category": "raw_gis",
+      "subdomain": "infrastructure",
+      "filename": "osm_raw_layers_pune.gpkg",
+      "relative_path": "data/raw/gis/osm_raw_layers_pune.gpkg",
+      "size_bytes": 741376,
+      "sha256": "47fdaa5d453161ab70adfc406f7418d0b5133a76e2538d4870ba6b6248712f53",
+      "format": "GeoPackage",
+      "provider": "OpenStreetMap Foundation & Contributors",
+      "license": "ODbL 1.0"
+    },
+    {
+      "category": "processed_raster",
+      "subdomain": "elevation",
+      "filename": "copernicus_glo90_pune_basin_dem.tif",
+      "relative_path": "data/processed/elevation/copernicus_glo90_pune_basin_dem.tif",
+      "size_bytes": 3459508,
+      "sha256": "cfc7ced3f6d6059ebf1326ce4b693a8e90c6e095e3e9b03c3b567b4bbc6e2361",
+      "format": "GeoTIFF (LZW Compressed)",
+      "product_type": "Cropped Digital Surface Model (DSM)",
+      "dimensions": [
+        1141,
+        721
+      ],
+      "crs": "EPSG:4326",
+      "bounds_wgs84": [
+        73.3,
+        18.25,
+        74.25,
+        18.85
+      ],
+      "unit": "meters",
+      "valid_range": "0.0m - 1396.6m"
+    },
+    {
+      "category": "processed_raster",
+      "subdomain": "elevation",
+      "filename": "copernicus_glo90_pune_basin_slope.tif",
+      "relative_path": "data/processed/elevation/copernicus_glo90_pune_basin_slope.tif",
+      "size_bytes": 3821984,
+      "sha256": "e90712c4a9f3ae10bfc76c197f22d04e0d75f8fcb6c21b4544ca4d02ca203908",
+      "format": "GeoTIFF (LZW Compressed)",
+      "product_type": "Topographic Slope Raster",
+      "dimensions": [
+        1141,
+        721
+      ],
+      "crs": "EPSG:4326",
+      "bounds_wgs84": [
+        73.3,
+        18.25,
+        74.25,
+        18.85
+      ],
+      "unit": "degrees",
+      "valid_range": "0.00\u00b0 - 69.93\u00b0"
+    },
+    {
+      "category": "processed_raster",
+      "subdomain": "rainfall",
+      "filename": "chirps_v3_pune_basin_cropped.tif",
+      "relative_path": "data/processed/rainfall/chirps_v3_pune_basin_cropped.tif",
+      "size_bytes": 1389,
+      "sha256": "4cff416d64bf0d5a23ac4caa9ba4e9069ae032ee5ccf954e2c780fcb45041697",
+      "format": "GeoTIFF (LZW Compressed)",
+      "product_type": "Cropped Peak Flood Day Precipitation (2024-07-25)",
+      "dimensions": [
+        19,
+        12
+      ],
+      "crs": "EPSG:4326",
+      "bounds_wgs84": [
+        73.3,
+        18.25,
+        74.25,
+        18.85
+      ],
+      "unit": "mm/day",
+      "valid_range": "16.22 - 344.00 mm/day"
+    },
+    {
+      "category": "processed_raster",
+      "subdomain": "rainfall",
+      "filename": "chirps_v3_pune_july2024_flood_sequence.tif",
+      "relative_path": "data/processed/rainfall/chirps_v3_pune_july2024_flood_sequence.tif",
+      "size_bytes": 6034,
+      "sha256": "30ad9837fc9f4a198e1afa680ad727212530b448712a26daced0d154890f1e76",
+      "format": "GeoTIFF (LZW Compressed)",
+      "product_type": "Multi-Band 2024 Flood Sequence (July 22-26, 2024)",
+      "dimensions": [
+        19,
+        12
+      ],
+      "crs": "EPSG:4326",
+      "bounds_wgs84": [
+        73.3,
+        18.25,
+        74.25,
+        18.85
+      ],
+      "unit": "mm/day",
+      "valid_range": "5 daily bands"
+    },
+    {
+      "category": "processed_tabular",
+      "subdomain": "rainfall",
+      "filename": "chirps_v3_pune_daily_2020_2024_timeseries.csv",
+      "relative_path": "data/processed/rainfall/chirps_v3_pune_daily_2020_2024_timeseries.csv",
+      "size_bytes": 3251,
+      "sha256": "5644949e9d6fb1500c9f97438ff6054f2d5bf51e25051939ecbb4739ec0f1a37",
+      "format": "CSV",
+      "product_type": "Multi-Year Daily Monsoon Rainfall Time Series (2020-2024)",
+      "unit": "mm/day",
+      "observation_epochs": "2020, 2021, 2022, 2023, 2024 peak monsoon flood periods"
+    },
+    {
+      "category": "processed_vector",
+      "subdomain": "gis",
+      "filename": "osm_features_pune.gpkg",
+      "relative_path": "data/processed/gis/osm_features_pune.gpkg",
+      "size_bytes": 741376,
+      "sha256": "47fdaa5d453161ab70adfc406f7418d0b5133a76e2538d4870ba6b6248712f53",
+      "format": "OGC GeoPackage (GPKG)",
+      "crs": "EPSG:4326",
+      "layers": [
+        "waterways",
+        "bridges",
+        "healthcare_facilities",
+        "education_facilities",
+        "civic_and_community_facilities",
+        "evacuation_road_network"
+      ],
+      "attribution": "\u00a9 OpenStreetMap contributors (ODbL). Arterial road backbone; civic halls are mapped community facilities, not certified flood shelters."
+    }
+  ]
+}

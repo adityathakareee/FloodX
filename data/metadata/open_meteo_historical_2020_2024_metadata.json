@@ -1,0 +1,26 @@
+{
+  "dataset_name": "OPEN_METEO_HISTORICAL_REANALYSIS_PUNE_2020_2024",
+  "provider": "Open-Meteo / ECMWF ERA5 & ERA5-Land Reanalysis",
+  "latitude": 18.5204,
+  "longitude": 73.8567,
+  "start_date": "2020-01-01",
+  "end_date": "2024-12-31",
+  "timezone": "UTC",
+  "variables": [
+    "temperature_2m",
+    "relative_humidity_2m",
+    "precipitation",
+    "rain",
+    "surface_pressure",
+    "wind_speed_10m",
+    "wind_direction_10m",
+    "soil_moisture_0_to_7cm",
+    "soil_moisture_7_to_28cm"
+  ],
+  "total_hours": 43848,
+  "file_path": "C:\\Users\\thaka\\OneDrive\\Desktop\\Hackathon\\FLOODX\\data\\raw\\historical_weather\\open_meteo_pune_hourly_2020_2024.json",
+  "file_size_bytes": 2772698,
+  "sha256": "6abdbc926c128215e2e46061b267c10badf6af7a0363e7ee61b1c72325feee10",
+  "license": "CC-BY 4.0 (Attribution: Open-Meteo & Copernicus Climate Change Service)",
+  "download_timestamp_utc": "2026-11-04T15:25:00Z"
+}

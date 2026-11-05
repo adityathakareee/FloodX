@@ -1,0 +1,100 @@
+{
+  "dataset_name": "OpenStreetMap Pune Infrastructure & Hydrology Layers",
+  "provider": "OpenStreetMap Foundation (Direct API 0.6 & Contributors)",
+  "license": "Open Database License (ODbL) 1.0 (https://opendatacommons.org/licenses/odbl/)",
+  "attribution": "© OpenStreetMap contributors (ODbL).",
+  "audit_findings_and_data_quality_flags": {
+    "road_network": {
+      "layer_name": "evacuation_road_network",
+      "feature_count": 906,
+      "highway_classes_present": {
+        "tertiary": 280,
+        "primary": 226,
+        "secondary": 214,
+        "trunk": 142,
+        "trunk_link": 15,
+        "primary_link": 15,
+        "secondary_link": 14
+      },
+      "classification": "Major Arterial Evacuation Corridor Backbone",
+      "completeness_status": "INCOMPLETE for last-mile evacuation routing. Residential, living_street, service, unclassified, and pedestrian connecting ways are excluded.",
+      "routing_engine_readiness": "Suitable as high-capacity regional arterial routing corridors. Phase 3/6 requires full topological street network ingestion (e.g. pgRouting / OSRM)."
+    },
+    "civic_facilities_and_shelters": {
+      "layer_name": "civic_and_community_facilities",
+      "feature_count": 7,
+      "facilities_present": [
+        "Vishnukrupa",
+        "Eknath Mangal Karyalay",
+        "Buddha Hall",
+        "Boat Club Road Community Center",
+        "Swastishri Sabhagruha - Badmintan Hall",
+        "Toastmasters Club of Pune-West"
+      ],
+      "classification": "Community civic halls and public banquet sabhagruhas",
+      "emergency_shelter_status": "NOT verified official flood shelters. These are mapped civic/social gathering halls. Official municipal flood shelters designated by PMC Disaster Management Cell must be verified in Phase 4."
+    },
+    "geometry_integrity": {
+      "invalid_geometries": 0,
+      "empty_geometries": 0,
+      "duplicate_osm_ids": 0,
+      "crs": "EPSG:4326"
+    }
+  },
+  "study_corridor": {
+    "name": "Pune / Mula-Mutha River Flood Risk Corridor",
+    "combined_extent_wgs84": [
+      73.820,
+      18.485,
+      73.890,
+      18.545
+    ]
+  },
+  "processed_file": {
+    "filename": "osm_features_pune.gpkg",
+    "relative_path": "data/processed/gis/osm_features_pune.gpkg",
+    "format": "OGC GeoPackage (GPKG)",
+    "crs": "EPSG:4326",
+    "layers": {
+      "waterways": {
+        "count": 21,
+        "geom_types": [
+          "LineString"
+        ]
+      },
+      "bridges": {
+        "count": 158,
+        "geom_types": [
+          "LineString"
+        ]
+      },
+      "healthcare_facilities": {
+        "count": 185,
+        "geom_types": [
+          "Point",
+          "MultiPolygon"
+        ]
+      },
+      "education_facilities": {
+        "count": 30,
+        "geom_types": [
+          "Point",
+          "MultiPolygon"
+        ]
+      },
+      "civic_and_community_facilities": {
+        "count": 7,
+        "geom_types": [
+          "Point"
+        ]
+      },
+      "evacuation_road_network": {
+        "count": 906,
+        "geom_types": [
+          "LineString"
+        ]
+      }
+    }
+  },
+  "acquisition_timestamp": "2026-11-04T15:30:00Z"
+}

@@ -1,0 +1,79 @@
+# ==========================================
+# FLOOD-X — Root .gitignore
+# ==========================================
+
+# Environment variables & secrets (CRITICAL)
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.cert
+
+# Python & Backend
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+eggs/
+.eggs/
+
+# Node & Frontend
+node_modules/
+.npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+frontend/dist/
+frontend/dist-ssr/
+frontend/.turbo/
+*.tsbuildinfo
+
+# Mobile & Expo
+mobile/node_modules/
+mobile/.expo/
+mobile/.expo-shared/
+mobile/web-build/
+mobile/dist/
+mobile/android/
+mobile/ios/
+
+# Database & local data
+postgres_data/
+*.db
+*.sqlite3
+
+# Logs
+logs/
+*.log
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary & test outputs
+tmp/
+temp/
+coverage/
+

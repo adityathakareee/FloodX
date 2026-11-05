@@ -1,0 +1,73 @@
+{
+  "dataset_name": "Copernicus DEM GLO-90",
+  "provider": "European Space Agency (ESA) / AWS Open Data",
+  "access_method": "Direct S3 HTTPS (Public / No Auth Required)",
+  "spatial_resolution": "90m (0.00083333 degrees / ~3 arc-seconds)",
+  "vertical_datum": "EGM2008 geoid",
+  "horizontal_datum": "WGS 84 (EPSG:4326)",
+  "surface_model_classification": {
+    "type": "Digital Surface Model (DSM)",
+    "description": "Represents the top reflective surface of the earth, including vegetation tree canopies, forest stands, and human-built structures (buildings, bridges, industrial sites).",
+    "distinction_from_dtm": "It is NOT a bare-earth Digital Terrain Model (DTM). In dense urban PMC/PCMC floodplains and dense Western Ghats forested catchments, elevation values incorporate canopy and structural heights. Hydro-conditioning and riverbed bathymetry burning will be required during 2D hydrodynamic flood routing."
+  },
+  "study_area": {
+    "name": "Pune / Mula-Mutha River Basin Provisional Catchment",
+    "bounds_wgs84": [73.30, 18.25, 74.25, 18.85],
+    "centroid": [18.5204, 73.8567]
+  },
+  "raw_tiles": [
+    {
+      "file": "Copernicus_DSM_COG_30_N18_00_E073_00_DEM.tif",
+      "crs": "EPSG:4326",
+      "width": 1200,
+      "height": 1200,
+      "bounds": [72.99958333333333, 18.000416666666666, 73.99958333333333, 19.000416666666666],
+      "nodata": null,
+      "dtype": "float32",
+      "size_bytes": 5518610
+    },
+    {
+      "file": "Copernicus_DSM_COG_30_N18_00_E074_00_DEM.tif",
+      "crs": "EPSG:4326",
+      "width": 1200,
+      "height": 1200,
+      "bounds": [73.99958333333333, 18.000416666666666, 74.99958333333333, 19.000416666666666],
+      "nodata": null,
+      "dtype": "float32",
+      "size_bytes": 4695910
+    }
+  ],
+  "processed_products": [
+    {
+      "product_type": "Cropped Digital Surface Model (DSM)",
+      "filename": "copernicus_glo90_pune_basin_dem.tif",
+      "relative_path": "data/processed/elevation/copernicus_glo90_pune_basin_dem.tif",
+      "crs": "EPSG:4326",
+      "dimensions": [1141, 721],
+      "pixel_size_deg": [0.0008333333333333334, 0.0008333333333333334],
+      "elevation_unit": "meters",
+      "elevation_stats": {
+        "min": 0.0,
+        "max": 1396.6,
+        "mean": 630.0,
+        "std": 188.1
+      }
+    },
+    {
+      "product_type": "Topographic Slope Raster",
+      "filename": "copernicus_glo90_pune_basin_slope.tif",
+      "relative_path": "data/processed/elevation/copernicus_glo90_pune_basin_slope.tif",
+      "crs": "EPSG:4326",
+      "dimensions": [1141, 721],
+      "slope_unit": "degrees",
+      "slope_stats": {
+        "min": 0.0,
+        "max": 69.93,
+        "mean": 6.66,
+        "std": 8.26
+      }
+    }
+  ],
+  "licensing": "Free and open data access under the Copernicus Programme and ESA terms of use.",
+  "acquisition_timestamp": "2026-11-04T15:30:00Z"
+}

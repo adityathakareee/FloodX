@@ -1,0 +1,144 @@
+{
+  "validation_framework": "5-Fold Event-Grouped Cross-Validation (GroupKFold)",
+  "leakage_safeguard": "Multi-day flood events clustered to prevent temporal split leakage",
+  "total_records": 1827,
+  "total_positive_days": 39,
+  "total_independent_flood_events": 11,
+  "positive_class_ratio_pct": 2.13,
+  "fold_details": [
+    {
+      "fold_index": 1,
+      "train_samples": 1460,
+      "test_samples": 367,
+      "train_flood_events_count": 9,
+      "test_flood_events_count": 2,
+      "train_positive_days": 33,
+      "test_positive_days": 6
+    },
+    {
+      "fold_index": 2,
+      "train_samples": 1462,
+      "test_samples": 365,
+      "train_flood_events_count": 9,
+      "test_flood_events_count": 2,
+      "train_positive_days": 35,
+      "test_positive_days": 4
+    },
+    {
+      "fold_index": 3,
+      "train_samples": 1462,
+      "test_samples": 365,
+      "train_flood_events_count": 9,
+      "test_flood_events_count": 2,
+      "train_positive_days": 33,
+      "test_positive_days": 6
+    },
+    {
+      "fold_index": 4,
+      "train_samples": 1463,
+      "test_samples": 364,
+      "train_flood_events_count": 9,
+      "test_flood_events_count": 2,
+      "train_positive_days": 29,
+      "test_positive_days": 10
+    },
+    {
+      "fold_index": 5,
+      "train_samples": 1461,
+      "test_samples": 366,
+      "train_flood_events_count": 8,
+      "test_flood_events_count": 3,
+      "train_positive_days": 26,
+      "test_positive_days": 13
+    }
+  ],
+  "sample_size_limitation": "CRITICAL SAMPLE SIZE LIMITATION: The historical register contains only 11 independent flood events across 5 years (2020-2024, 39 positive days). With 5-fold cross-validation, each test fold evaluates only 2 to 3 independent flood events. As a result, single-fold variance is high, confidence intervals around recall/precision are wide, and the model must remain classified as EXPERIMENTAL_EXPLORATORY_BASELINE rather than an autonomous operational trigger.",
+  "models_evaluated": [
+    {
+      "model_name": "Dummy Majority",
+      "out_of_fold_roc_auc": 0.5,
+      "out_of_fold_pr_auc": 0.0213,
+      "brier_calibration_score": 0.0213,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "accuracy": 0.9787,
+      "confusion_matrix": {
+        "true_negatives": 1788,
+        "false_positives": 0,
+        "false_negatives": 39,
+        "true_positives": 0
+      },
+      "false_alarm_rate_pct": 0.0
+    },
+    {
+      "model_name": "Rainfall Threshold (>50mm)",
+      "out_of_fold_roc_auc": 0.9049,
+      "out_of_fold_pr_auc": 0.1482,
+      "brier_calibration_score": 0.0209,
+      "precision": 0.1111,
+      "recall": 0.0256,
+      "f1_score": 0.0417,
+      "accuracy": 0.9748,
+      "confusion_matrix": {
+        "true_negatives": 1780,
+        "false_positives": 8,
+        "false_negatives": 38,
+        "true_positives": 1
+      },
+      "false_alarm_rate_pct": 0.45
+    },
+    {
+      "model_name": "Logistic Regression (Balanced)",
+      "out_of_fold_roc_auc": 0.9222,
+      "out_of_fold_pr_auc": 0.175,
+      "brier_calibration_score": 0.0758,
+      "precision": 0.1302,
+      "recall": 0.7179,
+      "f1_score": 0.2205,
+      "accuracy": 0.8916,
+      "confusion_matrix": {
+        "true_negatives": 1601,
+        "false_positives": 187,
+        "false_negatives": 11,
+        "true_positives": 28
+      },
+      "false_alarm_rate_pct": 10.46
+    },
+    {
+      "model_name": "Random Forest (Balanced)",
+      "out_of_fold_roc_auc": 0.9023,
+      "out_of_fold_pr_auc": 0.1008,
+      "brier_calibration_score": 0.0609,
+      "precision": 0.1046,
+      "recall": 0.4103,
+      "f1_score": 0.1667,
+      "accuracy": 0.9124,
+      "confusion_matrix": {
+        "true_negatives": 1651,
+        "false_positives": 137,
+        "false_negatives": 23,
+        "true_positives": 16
+      },
+      "false_alarm_rate_pct": 7.66
+    },
+    {
+      "model_name": "XGBoost (Calibrated Scale)",
+      "out_of_fold_roc_auc": 0.8693,
+      "out_of_fold_pr_auc": 0.1075,
+      "brier_calibration_score": 0.0318,
+      "precision": 0.0789,
+      "recall": 0.0769,
+      "f1_score": 0.0779,
+      "accuracy": 0.9611,
+      "confusion_matrix": {
+        "true_negatives": 1753,
+        "false_positives": 35,
+        "false_negatives": 36,
+        "true_positives": 3
+      },
+      "false_alarm_rate_pct": 1.96
+    }
+  ],
+  "scientific_takeaway": "Under 5-fold event-grouped cross-validation across 11 independent flood events (39 positive days), Logistic Regression (Balanced) achieved the highest out-of-fold ROC-AUC of 0.9222 and PR-AUC of 0.1750 with an event capture recall of 71.79% (28/39 positive days captured), accompanied by a false alarm rate of 10.46% (187 false positives). Random Forest (Balanced) achieved ROC-AUC of 0.9023, PR-AUC of 0.1008, and recall of 41.03% (16/39 captured). XGBoost (Calibrated Scale) achieved ROC-AUC of 0.8693 with conservative predictions (recall 7.69%, 3/39 captured, 1.96% false alarm rate). Given the small sample size of 11 independent flood episodes across 2020-2024 (2 to 3 events per test fold), variance is substantial and all models must strictly retain their status as EXPERIMENTAL_EXPLORATORY_BASELINE rather than autonomous operational triggers."
+}

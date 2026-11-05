@@ -1,0 +1,27 @@
+{
+  "dataset_name": "PUNE_MULA_MUTHA_HISTORICAL_FLOOD_CATALOG_1969_2024",
+  "provider": "Curated synthesis from India Flood Inventory v3 (Zenodo:16994648 / IIT Bombay & IIT Roorkee), Maharashtra Water Resources Department (WRD), Pune Municipal Corporation (PMC) Disaster Management Cell, and IMD",
+  "bounding_box": {
+    "min_latitude": 18.40,
+    "max_latitude": 18.65,
+    "min_longitude": 73.70,
+    "max_longitude": 74.05
+  },
+  "temporal_coverage": {
+    "start_date": "1969-09-15",
+    "end_date": "2024-07-26",
+    "total_events": 140
+  },
+  "event_breakdown_by_driver": {
+    "COMBINED": 56,
+    "URBAN_PLUVIAL_CLOUDBURST": 79,
+    "RIVERINE_DISCHARGE": 5
+  },
+  "file_path": "data/raw/flood_inventory/pune_historical_flood_events_curated.csv",
+  "file_size_bytes": 32269,
+  "sha256": "a309501a2e8052802de86545272004e35bce9f3f580d6eb96674aebca231717e",
+  "license": "Creative Commons Attribution 4.0 International (CC-BY 4.0) & Public Sector Information",
+  "scientific_audit_status": "VERIFIED_FOR_EVENT_CLASSIFICATION",
+  "limitations": "Event-level binary/administrative impact dates only; not pixel-level continuous 2D inundation depth grids. Must not be used directly as continuous depth regression targets."
+}
+

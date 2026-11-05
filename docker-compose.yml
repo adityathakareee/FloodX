@@ -1,0 +1,37 @@
+name: floodx
+
+services:
+  # ============================================================================
+  # FLOOD-X PostGIS Database Service
+  # Dedicated spatial database for Pune / Mula-Mutha river basin geospatial layers
+  # ============================================================================
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: floodx_postgis
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-floodx_admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-floodx_secret_change_in_prod}
+      POSTGRES_DB: ${POSTGRES_DB:-floodx_db}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/schemas:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-floodx_admin} -d ${POSTGRES_DB:-floodx_db}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - floodx_network
+
+volumes:
+  postgres_data:
+    name: floodx_postgres_data
+
+networks:
+  floodx_network:
+    name: floodx_network
+    driver: bridge

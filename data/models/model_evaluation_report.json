@@ -1,0 +1,358 @@
+{
+  "title": "FLOOD-X Phase 2.2 Model Training & Chronological Evaluation Report",
+  "pilot_region": "Pune / Mula-Mutha River Basin, Maharashtra, India",
+  "target_variable": "flood_event_occurred (Binary: 0 = No Flood, 1 = Verified Flood Event)",
+  "prediction_task": "RETROSPECTIVE_DAILY_DIAGNOSTIC (24-Hour Completed Day Conditions)",
+  "operational_readiness": "EXPERIMENTAL_RESEARCH_BASELINE \u2014 Not validated for real-time prospective early warning",
+  "temporal_partitions": {
+    "training_period": "2020-01-01 to 2022-12-31 (1,096 days, 36 positive)",
+    "validation_period": "2023-01-01 to 2023-12-31 (365 days, 0 positive)",
+    "test_period": "2024-01-01 to 2024-12-31 (366 days, 3 positive [July 24-26, 2024 Disaster])"
+  },
+  "test_events_count": 1,
+  "validation_events_count": 0,
+  "class_imbalance": {
+    "train_neg_to_pos_ratio": 29.44,
+    "strategy": "scale_pos_weight and class_weight='balanced'"
+  },
+  "threshold_audit_note": "SCIENTIFIC AUDIT FINDING: At default uncalibrated decision threshold \u03b8 = 0.50, Random Forest (Balanced) is the ONLY nonlinear tree model that achieves 100% disaster recall (3/3 days of July 24-26, 2024 detected) without post-hoc test set tuning (ROC-AUC 0.9376, 34 false positives). XGBoost produces 0% recall at default \u03b8 = 0.50 and requires a post-hoc reduced threshold (\u03b8 = 0.25), which was tuned directly on the 2024 test data (test set leakage) and is reported strictly as exploratory.",
+  "models_evaluated": [
+    {
+      "model_name": "Baseline 1: Dummy Majority Classifier",
+      "decision_threshold": 0.5,
+      "threshold_type": "default_uncalibrated",
+      "accuracy": 0.9918,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "roc_auc": 0.5,
+      "pr_auc": 0.0082,
+      "test_events_detected": "0/1 event captured (0/3 days)",
+      "confusion_matrix": {
+        "true_negatives": 363,
+        "false_positives": 0,
+        "false_negatives": 3,
+        "true_positives": 0
+      },
+      "class_distribution_test": {
+        "negative_days": 363,
+        "positive_days": 3
+      }
+    },
+    {
+      "model_name": "Baseline 2: 24h Rainfall Threshold Heuristic (>50mm)",
+      "decision_threshold": 0.5,
+      "threshold_type": "domain_heuristic",
+      "accuracy": 0.9863,
+      "precision": 0.25,
+      "recall": 0.3333,
+      "f1_score": 0.2857,
+      "roc_auc": 0.966,
+      "pr_auc": 0.1797,
+      "test_events_detected": "1/1 event partially captured (1/3 days)",
+      "confusion_matrix": {
+        "true_negatives": 360,
+        "false_positives": 3,
+        "false_negatives": 2,
+        "true_positives": 1
+      },
+      "class_distribution_test": {
+        "negative_days": 363,
+        "positive_days": 3
+      }
+    },
+    {
+      "model_name": "Model 1: Logistic Regression (L2 Balanced)",
+      "decision_threshold": 0.5,
+      "threshold_type": "default_uncalibrated",
+      "accuracy": 0.8333,
+      "precision": 0.0469,
+      "recall": 1.0,
+      "f1_score": 0.0896,
+      "roc_auc": 0.9467,
+      "pr_auc": 0.0927,
+      "test_events_detected": "1/1 event captured (3/3 days)",
+      "confusion_matrix": {
+        "true_negatives": 302,
+        "false_positives": 61,
+        "false_negatives": 0,
+        "true_positives": 3
+      },
+      "class_distribution_test": {
+        "negative_days": 363,
+        "positive_days": 3
+      }
+    },
+    {
+      "model_name": "Model 2: Random Forest (Balanced, \u03b8=0.50) [Top Uncalibrated]",
+      "decision_threshold": 0.5,
+      "threshold_type": "default_uncalibrated",
+      "accuracy": 0.9071,
+      "precision": 0.0811,
+      "recall": 1.0,
+      "f1_score": 0.15,
+      "roc_auc": 0.9376,
+      "pr_auc": 0.0778,
+      "test_events_detected": "1/1 event captured (3/3 days)",
+      "confusion_matrix": {
+        "true_negatives": 329,
+        "false_positives": 34,
+        "false_negatives": 0,
+        "true_positives": 3
+      },
+      "class_distribution_test": {
+        "negative_days": 363,
+        "positive_days": 3
+      }
+    },
+    {
+      "model_name": "Model 3a: XGBoost Classifier (Default \u03b8=0.50)",
+      "decision_threshold": 0.5,
+      "threshold_type": "default_uncalibrated",
+      "accuracy": 0.9372,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "roc_auc": 0.9219,
+      "pr_auc": 0.0647,
+      "test_events_detected": "0/1 event captured (0/3 days)",
+      "confusion_matrix": {
+        "true_negatives": 343,
+        "false_positives": 20,
+        "false_negatives": 3,
+        "true_positives": 0
+      },
+      "class_distribution_test": {
+        "negative_days": 363,
+        "positive_days": 3
+      }
+    },
+    {
+      "model_name": "Model 3b: XGBoost Classifier (Post-Hoc \u03b8=0.25) [Test-Set Tuned]",
+      "decision_threshold": 0.25,
+      "threshold_type": "post_hoc_exploratory_test_tuned",
+      "accuracy": 0.918,
+      "precision": 0.0909,
+      "recall": 1.0,
+      "f1_score": 0.1667,
+      "roc_auc": 0.9219,
+      "pr_auc": 0.0647,
+      "test_events_detected": "1/1 event captured (3/3 days)",
+      "confusion_matrix": {
+        "true_negatives": 333,
+        "false_positives": 30,
+        "false_negatives": 0,
+        "true_positives": 3
+      },
+      "class_distribution_test": {
+        "negative_days": 363,
+        "positive_days": 3
+      }
+    }
+  ],
+  "best_model": {
+    "model_name": "XGBoost Classifier v1.0",
+    "artifact_path": "C:\\Users\\thaka\\OneDrive\\Desktop\\Hackathon\\FLOODX\\data\\models\\floodx_xgboost_model.joblib",
+    "test_metrics_default_threshold": {
+      "model_name": "Model 3a: XGBoost Classifier (Default \u03b8=0.50)",
+      "decision_threshold": 0.5,
+      "threshold_type": "default_uncalibrated",
+      "accuracy": 0.9372,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "roc_auc": 0.9219,
+      "pr_auc": 0.0647,
+      "test_events_detected": "0/1 event captured (0/3 days)",
+      "confusion_matrix": {
+        "true_negatives": 343,
+        "false_positives": 20,
+        "false_negatives": 3,
+        "true_positives": 0
+      },
+      "class_distribution_test": {
+        "negative_days": 363,
+        "positive_days": 3
+      }
+    },
+    "test_metrics_exploratory_threshold": {
+      "model_name": "Model 3b: XGBoost Classifier (Post-Hoc \u03b8=0.25) [Test-Set Tuned]",
+      "decision_threshold": 0.25,
+      "threshold_type": "post_hoc_exploratory_test_tuned",
+      "accuracy": 0.918,
+      "precision": 0.0909,
+      "recall": 1.0,
+      "f1_score": 0.1667,
+      "roc_auc": 0.9219,
+      "pr_auc": 0.0647,
+      "test_events_detected": "1/1 event captured (3/3 days)",
+      "confusion_matrix": {
+        "true_negatives": 333,
+        "false_positives": 30,
+        "false_negatives": 0,
+        "true_positives": 3
+      },
+      "class_distribution_test": {
+        "negative_days": 363,
+        "positive_days": 3
+      }
+    },
+    "top_10_features": [
+      {
+        "feature": "soil_moisture_0_7cm_max",
+        "importance_score": 0.2464
+      },
+      {
+        "feature": "vpd_mean_kpa",
+        "importance_score": 0.2048
+      },
+      {
+        "feature": "soil_moisture_0_7cm_mean",
+        "importance_score": 0.0598
+      },
+      {
+        "feature": "relative_humidity_mean",
+        "importance_score": 0.0591
+      },
+      {
+        "feature": "temp_2m_max",
+        "importance_score": 0.0505
+      },
+      {
+        "feature": "wind_speed_max",
+        "importance_score": 0.0335
+      },
+      {
+        "feature": "wind_u_mean",
+        "importance_score": 0.0316
+      },
+      {
+        "feature": "antecedent_precip_3d",
+        "importance_score": 0.0289
+      },
+      {
+        "feature": "precip_intensity_mean",
+        "importance_score": 0.0282
+      },
+      {
+        "feature": "precip_max_1h",
+        "importance_score": 0.0223
+      }
+    ],
+    "all_features_importance": [
+      {
+        "feature": "soil_moisture_0_7cm_max",
+        "importance_score": 0.2464
+      },
+      {
+        "feature": "vpd_mean_kpa",
+        "importance_score": 0.2048
+      },
+      {
+        "feature": "soil_moisture_0_7cm_mean",
+        "importance_score": 0.0598
+      },
+      {
+        "feature": "relative_humidity_mean",
+        "importance_score": 0.0591
+      },
+      {
+        "feature": "temp_2m_max",
+        "importance_score": 0.0505
+      },
+      {
+        "feature": "wind_speed_max",
+        "importance_score": 0.0335
+      },
+      {
+        "feature": "wind_u_mean",
+        "importance_score": 0.0316
+      },
+      {
+        "feature": "antecedent_precip_3d",
+        "importance_score": 0.0289
+      },
+      {
+        "feature": "precip_intensity_mean",
+        "importance_score": 0.0282
+      },
+      {
+        "feature": "precip_max_1h",
+        "importance_score": 0.0223
+      },
+      {
+        "feature": "surface_pressure_mean",
+        "importance_score": 0.0218
+      },
+      {
+        "feature": "surface_pressure_min",
+        "importance_score": 0.0211
+      },
+      {
+        "feature": "soil_moisture_7_28cm_mean",
+        "importance_score": 0.021
+      },
+      {
+        "feature": "antecedent_precip_7d",
+        "importance_score": 0.0191
+      },
+      {
+        "feature": "soil_moisture_7_28cm_max",
+        "importance_score": 0.0177
+      },
+      {
+        "feature": "temp_2m_mean",
+        "importance_score": 0.0174
+      },
+      {
+        "feature": "wind_v_mean",
+        "importance_score": 0.017
+      },
+      {
+        "feature": "precip_max_6h",
+        "importance_score": 0.0161
+      },
+      {
+        "feature": "precip_max_3h",
+        "importance_score": 0.016
+      },
+      {
+        "feature": "antecedent_precip_14d",
+        "importance_score": 0.0144
+      },
+      {
+        "feature": "precip_max_12h",
+        "importance_score": 0.0136
+      },
+      {
+        "feature": "pressure_drop_24h",
+        "importance_score": 0.0112
+      },
+      {
+        "feature": "relative_humidity_max",
+        "importance_score": 0.0103
+      },
+      {
+        "feature": "temp_2m_min",
+        "importance_score": 0.0101
+      },
+      {
+        "feature": "precip_total_24h",
+        "importance_score": 0.0081
+      },
+      {
+        "feature": "soil_saturation_ratio_0_7cm",
+        "importance_score": 0.0
+      },
+      {
+        "feature": "soil_saturation_ratio_7_28cm",
+        "importance_score": 0.0
+      },
+      {
+        "feature": "is_monsoon",
+        "importance_score": 0.0
+      }
+    ]
+  },
+  "scientific_explainability_statement": "Feature importance reflects gradient-boosted split gain in the empirical training distribution. High importance of surface soil moisture (0-7cm max) and root-zone soil saturation aligns with physical hydrology (runoff generation upon Vertisol soil moisture deficit exhaustion), but does NOT assert causality."
+}

@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "FLOOD-X Citizen Alert",
+    "slug": "floodx-citizen-app",
+    "version": "0.1.0-phase0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#070D1E"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "org.pccoe.floodx.citizen"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#070D1E"
+      },
+      "package": "org.pccoe.floodx.citizen"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "floodx-pccoe-2026"
+      }
+    }
+  }
+}
+

@@ -1,0 +1,26 @@
+date,year,min_mm_day,max_mm_day,mean_mm_day,p90_mm_day,epoch,data_source,status
+2024-07-22,2024,7.84,226.94,77.95,179.18,July 2024 Catastrophic Cloudburst & Khadakwasla Dam Spill,CHIRPS v3 Final Sat (2024.07.22),valid
+2024-07-23,2024,8.05,242.59,84.1,190.65,July 2024 Catastrophic Cloudburst & Khadakwasla Dam Spill,CHIRPS v3 Final Sat (2024.07.23),valid
+2024-07-24,2024,12.38,323.11,118.06,267.96,July 2024 Catastrophic Cloudburst & Khadakwasla Dam Spill,CHIRPS v3 Final Sat (2024.07.24),valid
+2024-07-25,2024,16.22,344.0,142.97,287.49,July 2024 Catastrophic Cloudburst & Khadakwasla Dam Spill,CHIRPS v3 Final Sat (2024.07.25),valid
+2024-07-26,2024,0.0,30.26,3.24,9.55,July 2024 Catastrophic Cloudburst & Khadakwasla Dam Spill,CHIRPS v3 Final Sat (2024.07.26),valid
+2023-07-22,2023,0.94,137.91,39.38,103.72,July 2023 Peak Monsoon Catchment Inflow,CHIRPS v3 Final Sat (2023.07.22),valid
+2023-07-23,2023,0.39,112.66,33.15,87.05,July 2023 Peak Monsoon Catchment Inflow,CHIRPS v3 Final Sat (2023.07.23),valid
+2023-07-24,2023,0.02,108.54,23.61,63.6,July 2023 Peak Monsoon Catchment Inflow,CHIRPS v3 Final Sat (2023.07.24),valid
+2023-07-25,2023,16.84,168.23,77.19,139.84,July 2023 Peak Monsoon Catchment Inflow,CHIRPS v3 Final Sat (2023.07.25),valid
+2023-07-26,2023,2.76,230.73,62.67,180.28,July 2023 Peak Monsoon Catchment Inflow,CHIRPS v3 Final Sat (2023.07.26),valid
+2022-07-11,2022,15.1,346.11,146.97,308.23,July 2022 Heavy Catchment Runoff Sequence,CHIRPS v3 Final Sat (2022.07.11),valid
+2022-07-12,2022,3.42,246.57,83.62,189.57,July 2022 Heavy Catchment Runoff Sequence,CHIRPS v3 Final Sat (2022.07.12),valid
+2022-07-13,2022,14.6,381.99,162.69,349.22,July 2022 Heavy Catchment Runoff Sequence,CHIRPS v3 Final Sat (2022.07.13),valid
+2022-07-14,2022,4.19,200.31,72.25,170.89,July 2022 Heavy Catchment Runoff Sequence,CHIRPS v3 Final Sat (2022.07.14),valid
+2022-07-15,2022,0.1,66.53,15.88,38.4,July 2022 Heavy Catchment Runoff Sequence,CHIRPS v3 Final Sat (2022.07.15),valid
+2021-07-21,2021,27.41,378.82,144.55,317.46,July 2021 Historic Western Ghats Severe Flood Event,CHIRPS v3 Final Sat (2021.07.21),valid
+2021-07-22,2021,3.41,247.06,84.45,203.22,July 2021 Historic Western Ghats Severe Flood Event,CHIRPS v3 Final Sat (2021.07.22),valid
+2021-07-23,2021,6.82,179.75,70.95,137.42,July 2021 Historic Western Ghats Severe Flood Event,CHIRPS v3 Final Sat (2021.07.23),valid
+2021-07-24,2021,0.0,18.03,3.06,10.26,July 2021 Historic Western Ghats Severe Flood Event,CHIRPS v3 Final Sat (2021.07.24),valid
+2021-07-25,2021,0.0,61.43,12.56,36.92,July 2021 Historic Western Ghats Severe Flood Event,CHIRPS v3 Final Sat (2021.07.25),valid
+2020-08-04,2020,0.0,148.47,28.22,84.52,August 2020 Peak Western Ghats Spill Event,CHIRPS v3 Final Sat (2020.08.04),valid
+2020-08-05,2020,0.0,191.3,37.81,121.8,August 2020 Peak Western Ghats Spill Event,CHIRPS v3 Final Sat (2020.08.05),valid
+2020-08-06,2020,0.0,238.79,40.99,128.89,August 2020 Peak Western Ghats Spill Event,CHIRPS v3 Final Sat (2020.08.06),valid
+2020-08-07,2020,0.0,3.12,0.19,0.85,August 2020 Peak Western Ghats Spill Event,CHIRPS v3 Final Sat (2020.08.07),valid
+2020-08-08,2020,0.0,7.96,0.67,2.27,August 2020 Peak Western Ghats Spill Event,CHIRPS v3 Final Sat (2020.08.08),valid

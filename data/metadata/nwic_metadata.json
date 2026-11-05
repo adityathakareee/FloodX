@@ -1,0 +1,68 @@
+{
+  "dataset_name": "NWIC Indian Telemetry (CWPRS Rainfall & Maharashtra SW River Water Levels)",
+  "provider": "National Water Informatics Centre (NWIC), Ministry of Jal Shakti, Government of India",
+  "portal": "https://nwdp.nwic.gov.in/",
+  "license": "Government Open Data License - India (GODL)",
+  "audit_findings_and_data_quality_flags": {
+    "cwprs_rainfall": {
+      "station_name": "CWPRS campus",
+      "agency": "CWPRS",
+      "station_id": "CWPRS_KHADAKWASLA_PUNE",
+      "latitude": 18.44694444,
+      "longitude": 73.785,
+      "location_relevance": "Within pilot basin (Directly adjacent to Khadakwasla Dam reservoir in Haveli Tehsil, Pune)",
+      "measurement_column": "Telemetry Hourly Rainfall (mm)",
+      "actual_sampling_interval": "5 minutes (23,873 out of 24,211 steps are exactly 5.0 minutes)",
+      "measurement_type": "Cumulative 24-hour rainfall bucket resetting at 08:30 AM IST (Standard Indian Meteorological reporting day)",
+      "extreme_value_assessment": "The reported peak value of 145.6 mm on 25-07-2024 at 08:25 IST is a 24-hour CUMULATIVE rainfall total, NOT a 1-hour rainfall rate. At 08:35 IST the reading reset to 0.6 mm, confirming the standard 08:30 AM 24-hour bucket reset. The peak 5-minute increment was +0.8 mm.",
+      "data_quality_flags": [
+        "COLUMN_NAME_MISLEADING_ACTUAL_INTERVAL_5MIN",
+        "VALUES_ARE_24HR_CUMULATIVE_NOT_HOURLY_RATES",
+        "DAILY_RESET_AT_0830_IST",
+        "ZERO_NEGATIVE_VALUES",
+        "ZERO_DUPLICATE_TIMESTAMPS"
+      ]
+    },
+    "maharashtra_sw_river_level": {
+      "station_name": "Ankali Bridge",
+      "agency": "Maharashtra SW",
+      "district": "Sangli",
+      "tehsil": "MIRAJ",
+      "river": "Krishna",
+      "basin": "Krishna",
+      "sub_basin": "Krishna Lower / Middle Reach",
+      "latitude": 16.80277778,
+      "longitude": 74.56638889,
+      "distance_from_pune_centroid_km": 205.3,
+      "geographic_classification": "Regional reference only (Outside pilot basin)",
+      "hydrological_relationship": "Located on the mainstem Krishna River near Sangli/Miraj, over 200 km south of Pune. It does NOT measure Pune / Mula-Mutha river water levels.",
+      "vertical_datum": "Mean Sea Level (MSL)",
+      "zero_gauge_rl": 0.0,
+      "measurement_range_m_msl": "526.10 m to 546.15 m",
+      "data_quality_flags": [
+        "OUTSIDE_PILOT_BASIN_REGIONAL_REFERENCE_ONLY",
+        "NOT_MULA_MUTHA_RIVER_GAUGE",
+        "ACCURATE_FOR_SANGLI_KRISHNA_NOT_PUNE"
+      ]
+    }
+  },
+  "files": [
+    {
+      "product_type": "CWPRS 5-Minute Telemetry Rainfall (Khadakwasla/Pune)",
+      "filename": "rainfall_tel_hr_cwprs_mh_sample.csv",
+      "relative_path": "data/raw/rainfall/rainfall_tel_hr_cwprs_mh_sample.csv",
+      "size_bytes": 3183202,
+      "sha256": "806dca50a1bf64c9ca4e7eec82cb41c10714c62fa36f6e3c965e99ee70f5e7f1",
+      "temporal_coverage": "2024-05-11 19:45:00 to 2025-06-07 17:20:00"
+    },
+    {
+      "product_type": "Maharashtra SW River Water Level Telemetry (Ankali Bridge, Sangli)",
+      "filename": "rwl_tel_hr_maharashtra_sw_007_sample.csv",
+      "relative_path": "data/raw/river_levels/rwl_tel_hr_maharashtra_sw_007_sample.csv",
+      "size_bytes": 5242880,
+      "sha256": "43924efc8da790cb944df3bfb0959ee0e6ba0d15e98f0e5aa37fb0ce26d84d5f",
+      "temporal_coverage": "2022-02-12 14:00:00 to 2023-05-01 07:45:00"
+    }
+  ],
+  "acquisition_timestamp": "2026-11-04T15:30:00Z"
+}

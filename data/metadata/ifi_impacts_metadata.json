@@ -1,0 +1,43 @@
+{
+  "source_name": "INDIA_FLOOD_INVENTORY_IMPACTS",
+  "zenodo_record_id": 16994648,
+  "doi": "10.5281/zenodo.16994648",
+  "title": "India Flood Inventory-Impacts (IFI-Impacts) [1967-2023]: A multi-source national geospatial database to facilitate comprehensive flood research",
+  "creators": [
+    "Manabendra Saharia"
+  ],
+  "publication_date": "2025-08-29",
+  "license": "cc-by-nc-4.0",
+  "description": "<p>This repository hosts the India Flood Inventory with Impacts (IFI-Impacts) database. It contains flood event data sourced from the Indian Meteorological Department from 1967-2023. It has undergone extensive manual digitization, cleaning, and includes new information to make it suitable for computational research in hydroclimate.</p>\n<p>v4.0: Development of District Flood Severity Index (DFSI)</p>\n<p>v3.0: India Flood Inventory (IFI) 1967-2023. Updated with local government codes (LGD) for state and district.&nbsp;</p>\n<p>v1.0: India Flood Inventory (IFI) 1967-2016.</p>\n<p>v2.0: India Flood Inventory (IFI) 1967-2023. With impacts and district flooded area.</p>\n<p><strong>REFERENCES</strong></p>\n<p>Saharia, M., Jain, A., Baishya, R.R., Haobam, S., Sreejith, O.P., Pai, D.S., Rafieeinasab, A., 2021. India flood inventory: creation of a multi-source national geospatial database to facilitate comprehensive flood research. Nat Hazards.&nbsp;<a href=\"https://doi.org/10.1007/s11069-021-04698-6\">https://doi.org/10.1007/s11069-021-04698-6</a></p>\n<div>\n<div>Saharia, M., Jain, S.K., Prakash, V., Malik, H., Sreejith, O.P., Joshi, D., 2025. A district-level flood severity index for flood management in India. Nat Hazards. <a href=\"https://doi.org/10.1007/s11069-025-07493-9\">https://doi.org/10.1007/s11069-025-07493-9</a></div>\n</div>",
+  "download_timestamp_utc": "2026-11-04T15:20:00Z",
+  "files": [
+    {
+      "filename": "India_Flood_Inventory_v3.csv",
+      "size_bytes": 1801579,
+      "sha256": "ef9ab2cd0db7bf917dcc22c7cb094ec599f5013ef1b96ba525d816f26ff1b108",
+      "zenodo_md5": "md5:fea75a9ff9eba8fb328eaddfacd21d67",
+      "download_url": "https://zenodo.org/api/records/16994648/files/India_Flood_Inventory_v3.csv/content"
+    },
+    {
+      "filename": "District_FloodImpact.csv",
+      "size_bytes": 19122,
+      "sha256": "0cc7381e8153cdd34e287540e64947e4cd2e5ff46d2461581e7b6c041b3655fb",
+      "zenodo_md5": "md5:231d4157f462ea6c9bfd728c9dfbf520",
+      "download_url": "https://zenodo.org/api/records/16994648/files/District_FloodImpact.csv/content"
+    },
+    {
+      "filename": "District_FloodedArea.csv",
+      "size_bytes": 32567,
+      "sha256": "738d5edf8a29c70de520b3b7b8e148eb7eed2ce89bbd9f0ecacd3cbc17b07610",
+      "zenodo_md5": "md5:52744304c21f28b841fb3a28e510e789",
+      "download_url": "https://zenodo.org/api/records/16994648/files/District_FloodedArea.csv/content"
+    },
+    {
+      "filename": "DFSI.csv",
+      "size_bytes": 29118,
+      "sha256": "25cb6ad0ad7b8b681ece2c99dcc6030de1debf2569f5e8e8a47a4144d90a8cac",
+      "zenodo_md5": "md5:d15cbab2f15c3a6c393fd45220665211",
+      "download_url": "https://zenodo.org/api/records/16994648/files/DFSI.csv/content"
+    }
+  ]
+}
